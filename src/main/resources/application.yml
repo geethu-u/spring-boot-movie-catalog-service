@@ -1,0 +1,23 @@
+server.port: 8083
+spring.application.name: movie-catalog-service
+#management.endpoints.web.exposure.include: hystrix.stream - just expose for hystrix dashboard
+management.endpoints.web.exposure.include: "*"
+my:
+  greeting: Hello from local
+db:
+  port: 9999
+  username: test
+  host: http://test
+  connection: "{connectionString:http://connection}"
+
+spring.profiles.active: test
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+  application:
+    name: movie-catalog-service
+      #this is going to be used by config service to prioritize
+      #the property source, so app specific values,
+      #put in a file named same as spring.application.name

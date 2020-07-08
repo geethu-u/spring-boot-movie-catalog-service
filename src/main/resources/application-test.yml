@@ -1,0 +1,9 @@
+server.port: 8083
+spring.application.name: movie-catalog-service
+#management.endpoints.web.exposure.include: hystrix.stream - just expose for hystrix dashboard
+management.endpoints.web.exposure.include: "*"
+
+db:
+  port: 2400
+  host: http://test-application-local
+  connection: "{connectionString:http://connection}"
